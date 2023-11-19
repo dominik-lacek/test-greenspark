@@ -1,0 +1,19 @@
+@use "src/_lib.scss" as *;
+
+.ColorButton{
+    &_root{
+        @include BackgroundColor;
+        width: toRem(16px);
+        height: toRem(16px);
+        &.isSelected{
+            width: toRem(13.5px);
+            height: toRem(13.5px);
+            border-style: solid;
+            border-color: #B0B0B0;
+            border-width: toRem(1.5px);
+        }
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}

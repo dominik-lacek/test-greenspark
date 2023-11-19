@@ -1,0 +1,70 @@
+@use "src/_lib.scss" as *;
+
+.ProductWidget{
+    &_root{
+        width: toRem(221px);
+        margin-top: toRem(20px);
+        margin-right: toRem(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        & > * + *{
+            margin-top: toRem(10px);
+        }
+    }
+    &_header{
+        @include BackgroundColor;
+        height: toRem(66px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: toRem(6px);
+        padding-left: toRem(10px);
+        padding-right: toRem(10px);
+    }
+    &_headerLabels{
+        @include TextColor;
+        display: flex;
+        flex-direction: column;
+        & > * + *{
+            margin-top: toRem(4px);
+        }
+    }
+    &_headerLogoBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: toRem(45px);
+        margin-right: toRem(10px);
+    }
+    &_headerLogo{
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: toRem(32px);
+        height: toRem(32px);
+        &.white{
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(157deg) brightness(101%) contrast(102%);
+        }
+        &.green{
+            filter: brightness(0) saturate(100%) invert(37%) sepia(56%) saturate(349%) hue-rotate(106deg) brightness(93%) contrast(84%);
+        }
+    }
+    &_headerLogoText{
+        @include TextColor;
+        font-size: toRem(8px);
+    }
+    &_row{
+        height: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &_subRow{
+        display: flex;
+        flex-direction: row;
+        & > * + *{
+            margin-left: toRem(4px);
+        }
+    }
+}

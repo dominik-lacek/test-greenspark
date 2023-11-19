@@ -1,0 +1,47 @@
+$whiteColor:#FFFFFF;
+$blackColor:#212121;
+$blueColor:#2E3A8C;
+$greenColor:#3B755F;
+$baigeColor:#F2EBDB;
+
+@function toRem($value) {
+    $remValue: (($value / ($value * 0 + 1)) / 16) + rem; 
+    @return $remValue;
+}
+
+@mixin TextColor{
+    &.white{
+        color: $whiteColor;
+    }
+    &.black{
+        color: $blackColor;
+    }
+    &.blue{
+        color: $blueColor;
+    }
+    &.green{
+        color: $greenColor;
+    }
+    &.baige{
+        color: $baigeColor;
+    }
+}
+
+@mixin BackgroundColor{
+    &.white{
+        background-color: $whiteColor;
+    }
+    &.black{
+        background-color: $blackColor;
+    }
+    &.blue{
+        background-color: $blueColor;
+    }
+    &.green{
+        background-color: $greenColor;
+    }
+    &.baige{
+        background-color: $baigeColor;
+    }
+}
+

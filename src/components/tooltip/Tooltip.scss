@@ -1,0 +1,54 @@
+@use "src/_lib.scss" as *;
+
+.Tooltip{
+    &_root{
+        width: toRem(9px);
+        height: toRem(9px);
+        border-radius: toRem(99px);
+        position: relative;
+        pointer-events: all;
+        border: toRem(1px) solid $greenColor;
+        transition: all 0.1s;
+        background-color: transparent;
+        &.isHovered{
+            background-color: $greenColor;
+        }
+    }
+    &_i{
+        width: toRem(10px);
+        height: toRem(10px);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: toRem(8px);
+        color: $greenColor;
+        pointer-events: none;
+        &.isHovered{
+            color: white;
+        }
+    }
+    &_content{
+        width: toRem(248px);
+        padding: toRem(16px);
+        border-radius: toRem(4px);
+        box-shadow: 0 toRem(15px) toRem(30px) rgba(160, 160, 160, 0.356);
+        pointer-events: none;
+        position: absolute;
+        background-color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+        text-align: center;
+        &.isHovered{
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    &_text{
+        margin-bottom: toRem(20px);
+    }
+}

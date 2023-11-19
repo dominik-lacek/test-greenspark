@@ -1,0 +1,67 @@
+@use "src/_lib.scss" as *;
+
+.Toggle{
+    &_root{
+        width: toRem(40px);
+        height:  toRem(20px);
+        border-radius:  toRem(30px);
+        position: relative;
+        pointer-events: all;
+        box-shadow: inset 0rem 0rem toRem(6px) toRem(2px) #4e4e4e1a;
+        border:  toRem(1px) solid #AFC6BD;
+        transition: all 0.1s;
+        &.isSelected{
+            border-color: #B0B0B0;   
+        }
+    }
+    &_fill{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: $greenColor;
+        border-radius: toRem(30px);
+        height: toRem(20px);
+        width: toRem(20px);
+        pointer-events: none;
+        transition: all 0.1s;
+        &.isSelected{
+            width: 100%;
+        }
+    }
+    &_centerPoint{
+        display: flex;
+        position: relative;
+        max-width: 0;
+        max-height: 0;
+        margin-right: toRem(10px);
+    }
+    &_knob{
+        transform: translate(-50%, -50%);
+        background-color: #F9F9F9;
+        border-radius: toRem(30px);
+        width: toRem(21px);
+        height: toRem(21px);
+        pointer-events: none;
+        position: absolute;
+        transition: all 0.1s;
+        border: toRem(1.5px) solid $baigeColor;
+        &.isSelected{
+            border-color: $greenColor;
+        }
+    }
+    &_hoverAura{
+        transform: translate(-50%, -50%);
+        background-color: $greenColor;
+        border-radius: toRem(50px);
+        width: toRem(30px);
+        height: toRem(30px);
+        pointer-events: none;
+        position: absolute;
+        transition: all 0.1s;
+        opacity: 0;
+        &.isHovered{
+            opacity: 0.15;
+        }
+    }
+}
